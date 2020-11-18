@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定</title>
+    <link rel="stylesheet" href="css/tabcss.css">
+</head>
+<body>
+<div id="app">
+    <div class="tab">
+        <ul>
+            <li class="active">apple</li>
+            <li>orange</li>
+            <li>lemon</li>
+        </ul>
+        <div class="current">
+            <img src="./img/apple.png">
+        </div>
+        <div>
+            <img src="./img/orange.png">
+        </div>
+        <div>
+            <img src="./img/lemon.png">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    // 属性绑定
+    var vm = new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+            handle: function () {
+
+            }
+        }
+    });
+</script>
+</body>
+</html>
