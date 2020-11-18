@@ -6,15 +6,19 @@
 </head>
 <body>
 <div id="app">
-
+    <ul>
+        <li v-for="item in fruits">{{item}}</li>
+    </ul>
 </div>
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
-    // 属性绑定
+    /*
+    分支结构
+     */
     var vm = new Vue({
         el: '#app',
         data: {
-
+            fruits: ['apple', 'orange', 'banana']
         },
         methods: {
             handle: function () {
