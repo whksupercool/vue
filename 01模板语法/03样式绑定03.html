@@ -18,11 +18,18 @@
             color: blue;
         }
 
+        .base {
+            font-size: 28px;
+        }
+
     </style>
 </head>
 <body>
 <div id="app">
     <div v-bind:class="[activeClass, errorClass, {test:isTest}]">测试样式</div>
+    <div v-bind:class="arrClasses"></div>
+    <div v-bind:class="objClasses"></div>
+    <div class="base" v-bind:class="[objClasses, {test:isTest}]">哈哈哈</div>
     <button v-on:click="handle">切换</button>
 </div>
 <script type="text/javascript" src="../js/vue.min.js"></script>
@@ -34,11 +41,17 @@
         data: {
             activeClass: 'active',
             errorClass: 'error',
+            arrClasses: ['active','error'],
+            objClasses: {
+                active: true,
+                error: true
+            },
             isTest: true
         },
         methods: {
             handle: function () {
-                this.isTest = false
+                // this.isTest = false
+                this.objClasses.error = !this.objClasses.error
             }
         }
     });
