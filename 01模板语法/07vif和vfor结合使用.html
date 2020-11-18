@@ -16,15 +16,30 @@
             <span>{{item.cname}}</span>
         </li>
     </ul>
+    <div v-if="v==12" v-for="(v, k, j) in obj">{{v+'---'+k+'---'+j}}</div>
 </div>
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+    // 使用原生js遍历对象
+    var obj = {
+        uname: 'lisi',
+        age: '12',
+        gender: 'male'
+    }
+    for (var key in obj) {
+        console.log(key, obj[key])
+    }
     /*
-    分支结构
+    循环结构
      */
     var vm = new Vue({
         el: '#app',
         data: {
+            obj: {
+                uname: 'lisi',
+                age: '12',
+                gender: 'male'
+            },
             fruits: ['apple', 'orange', 'banana'],
             myFruits: [{
                 id: 1,
