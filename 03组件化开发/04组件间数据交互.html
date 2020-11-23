@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04组件间数据交互</title>
+</head>
+<body>
+<div id="app">
+    <div>{{pmsg}}</div>
+    <menu-item title="来自父组件中的值"></menu-item>
+    <menu-item :title="ptitle" content="hello"></menu-item>
+</div>
+<script type="text/javascript" src="../js/vue.js"></script>
+<script type="text/javascript">
+    // 04组件间数据交互
+    Vue.component('menu-item', {
+        props: ['title', 'content'],
+        data() {
+            return {
+                msg: '子组件本身的数据'
+            }
+        },
+        template: '<div>{{msg + "---" + title + "***" + content}}</div>'
+    });
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            pmsg: '父组件的内容',
+            ptitle: '动态绑定属性'
+        },
+        methods: {}
+    });
+</script>
+</body>
+</html>
