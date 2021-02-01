@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                messages: 'hello',
+                checked: false,
+                check: []
+            }
+        },
+        computed: {},
+        methods: {},
+        // template: '<div>{{messages}}<input v-model="messages"></div>'
+        // template: '<div>{{messages}}<textarea v-model="messages"></textarea></div>'
+        // template: '<div>{{checked}}<input type="checkbox" v-model="checked"></div>'
+        template: '<div>{{check}}<input type="checkbox" value="dell" v-model="check">' +
+            '<input type="checkbox" value="lee" v-model="check">' +
+            '<input type="checkbox" value="jack" v-model="check"></div>'
+    });
+
+    const vm = app.mount('#root');
+</script>
+</html>

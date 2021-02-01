@@ -24,10 +24,15 @@
             handleBtnClick(num, event) {
                 // console.log(event.target)
                 this.counter += num
+            },
+            handleKeyDowm() {
+                console.log('keydown' +
+                    '')
             }
         },
-        template: '<div>{{counter}}<div @click="handleDivClick"><button @click.stop="handleBtnClick(2, $event)">点我</button></div></div>'
+        // template: '<div>{{counter}}<div @click="handleDivClick"><button @click.stop="handleBtnClick(2, $event)">点我</button></div></div>'
         // template: '<div>{{counter}}<button @click="counter += 1">点我</button></div>'
+        template: '<div><input @keydown.enter="handleKeyDowm"></div>'
     });
 
     const vm = app.mount('#root');
