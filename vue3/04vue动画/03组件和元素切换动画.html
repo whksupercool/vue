@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue</title>
+    <style>
+        .v-enter-from,
+        .v-leave-to {
+            opacity: 0;
+        }
+
+        .v-enter-active,
+        .v-leave-active {
+            transition: opacity 1s ease-in;
+        }
+
+        .v-enter-to,
+        .v-leave-from {
+            opacity: 1;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="root"></div>
+</body>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                show: false
+            }
+        },
+        methods: {
+            handleClick() {
+                this.show = !this.show;
+            }
+        },
+        template: '<div>' +
+            '<transition mode="out-in" appear>' +
+            '<div v-if="show">hello, world!</div>' +
+            '<div v-else="show">bye, world!</div>' +
+            '</transition>' +
+            '<button @click="handleClick">切换</button>' +
+            '</div>'
+    });
+
+    const vm = app.mount('#root');
+</script>
+</html>
